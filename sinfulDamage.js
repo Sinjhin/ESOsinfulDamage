@@ -54,13 +54,13 @@ function findOptimalEnhancements(userWeaponDamage, baseCritChance, baseCritDamag
 
 async function main() {
     const userWeaponDamage = await promptUserInput('Enter your Weapon Damage (default 5000): ', 5000);
-    const baseCritDamageInput = await promptUserInput('Enter your Base Critical Damage (default 0.10, DE with Major Savegery and no gear .289): ', 0.10, parseFloat);
+    const baseCritChanceInput = await promptUserInput('Enter your Base Critical Damage (default 0.10, DE with Major Savegery and no gear .289): ', 0.10, parseFloat);
     const maxLines = await promptUserInput('Enter the maximum number of lines to distribute (default 12): ', 12);
     const maxWeaponDamageEnchants = await promptUserInput(`Enter the maximum number of Weapon Damage Lines @129 Wep/Spl Dmg (default 2, max ${maxLines}): `, 2, input => Math.min(parseInt(input, 10), maxLines));
-    const maxPercentDamageIncreases = await promptUserInput('Allow for set percentage increases? 6% damage per (0-3): ', 0, input => Math.max(0, Math.min(parseInt(input, 10), 3)));
+    const maxPercentDamageIncreases = await promptUserInput('Allow for set percentage increases? 6% damage per (0-3): ', 0, input => Math.max(0, Math.min(parseInt(input, 10), 0)));
 
-    const baseCritChance = 0.10; // 10%
-    const baseCritDamage = baseCritDamageInput; // User input or default +10%
+    const baseCritChance = baseCritChanceInput; // 10% default
+    const baseCritDamage = 1.80; // +80% Major and Minor force/
     const maxCritDamage = 2.25; // +125%
 
     const optimalDistribution = findOptimalEnhancements(userWeaponDamage, baseCritChance, baseCritDamage, maxCritDamage, maxLines, maxWeaponDamageEnchants, maxPercentDamageIncreases);
