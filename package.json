@@ -1,0 +1,27 @@
+{
+  "name": "esosinfuldamage",
+  "version": "1.0.0",
+  "description": "Calculate optimal damage lines for Elder Scrolls Online",
+  "main": "sinfulDamage.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sinjhin/ESOsinfulDamage.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node sinfulDamage.js"
+  },
+  "keywords": [
+    "elder",
+    "scrolls",
+    "online",
+    "crit",
+    "damage",
+    "critical",
+    "weapon",
+    "lines",
+    "optimal"
+  ],
+  "author": "Johnathan Gardner (Sinjhin)",
+  "license": "MIT"
+}
